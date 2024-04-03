@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    margin: 0;
+    background-color: beige;
+}
+
+
+
+.calculator {
+    background-color: white;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.display {
+    background-color: green;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 3px;
+    text-align: right;
+}
+
+.display-input {
+    border: none;
+    font-size: 2em;
+    width: 100%;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+    background-color: white;
+    border: 1px solid black;
+    font-size: 1.5em;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.1s;
+}
+
+.button:hover {
+    background-color: lightgreen;
+}
+
+.button:active {
+    background-color: lightcoral;
+}

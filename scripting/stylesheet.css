@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap');
+
+body {
+    font-family: 'Muli', sans-serif;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+main {
+    width: 40%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: purple 3px 3px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.index {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 50px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav h2 {
+    text-align: center;
+}
+
+nav ol {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: purple;
+}
+
+.mainImage {
+    width: 40%;
+    height: auto;
+}
