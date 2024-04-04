@@ -15,9 +15,18 @@ function calculate() {
     try {
         let result = eval(displayInput.value);
 
+        addToPastResults(displayInput.value + ' = ' + result);
         displayInput.value = result;
+        
     } catch (error) {
         displayInput.value = 'Error';
     }
 }
 
+
+function addToPastResults(result) {
+    let pastResultsList = document.getElementById('past-results-list');
+    let listItem = document.createElement('li');
+    listItem.textContent = result;
+    pastResultsList.appendChild(listItem);
+}
