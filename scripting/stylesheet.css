@@ -87,3 +87,10 @@ nav a:hover {
     padding: 20px;
 }
 
+code {
+    font-size: 20px;
+    color: purple;
+    padding: 5px;
+    border-radius: 5px;
+}
+
