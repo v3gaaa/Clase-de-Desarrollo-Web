@@ -26,6 +26,12 @@ h1 {
     text-shadow: purple 3px 3px;
 }
 
+h3 {
+    text-align: center;
+    color: white;
+    text-decoration: underline purple;
+}
+
 p {
     margin-bottom: 20px;
 }
@@ -72,4 +78,12 @@ nav a:hover {
 .mainImage {
     width: 40%;
     height: auto;
+    mask-image: linear-gradient(purple 70%, transparent);
 }
+
+.list {
+    font-family: 'Muli', sans-serif;
+    color: white;
+    padding: 20px;
+}
+
