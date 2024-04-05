@@ -23,7 +23,6 @@ function calculate() {
     }
 }
 
-
 function addToPastResults(result) {
     let pastResultsList = document.getElementById('past-results-list');
     let listItem = document.createElement('li');
