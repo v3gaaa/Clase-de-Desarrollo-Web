@@ -1,10 +1,11 @@
 import './App.css'
+import GameBoyLogo from './assets/gameboybrand.png';
+import Nintendo from './assets/nintendo.png'; 
 
 function App() {
 
   return (
       <div className="main-container">
-
         <div className="layout">
         <div className="layout-game">
 
@@ -12,14 +13,15 @@ function App() {
 
             <div className='cross'>
               <div className='cross-left'>
-                <button className='left'>LEFT</button>
+                <button className='left'></button>
               </div>
               <div className='cross-middle'>
-                <button className='up'>UP</button>
-                <button className='down'>DOWN</button>
+                <button className='up'></button>
+                <button className='middle'></button>
+                <button className='down'></button>
               </div>
               <div className='cross-right'>
-                <button className='right'>RIGHT</button>
+                <button className='right'></button>
               </div>
               
               
@@ -28,11 +30,18 @@ function App() {
             </div>
 
           </div>
+          
+          <div className="screen">
 
-          <div className="container-screen">
-            <div className="screen-layout"></div>
-            <div className="brand-name">
-              <h1>Gameboy Advanced</h1>
+            <div className="nintendo-logo">
+              <img src={Nintendo} alt="Nintendo" className='nintendo'/>
+            </div>
+
+            <div className="container-screen">
+              <div className="screen-layout"></div>
+              <div className="brand-name">
+                <img src={GameBoyLogo} alt="Gameboy Advance" className='logo'/>
+              </div>
             </div>
           </div>
 

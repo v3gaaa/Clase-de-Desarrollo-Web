@@ -1,21 +1,28 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Tac+One&display=swap');
+
 .main-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: column ;
+  flex-direction: column;
   align-items: center;
   background-color: wheat;
-  width: 1500px;
-  height: 650px;
 }
-
 
 .layout {
   width: 800px;
   height: 350px;
-  border-radius: 12% 12% 17% 17%;
+  border-radius: 12% 12% 35% 35%;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: #C9C3DB;
   border: solid 2px black;
 }
 
@@ -23,29 +30,73 @@
   width: 800px;
   height: 350px;
   border: solid 5px black;
-  border-radius: 20% 20% 17% 17%;
+  border-radius: 20% 20% 35% 35%;
   display: flex;
   justify-content: center;
-  background-color: blue;
+  background-color: #503B84;
 }
 
-.container-screen{
+
+.screen {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.nintendo-logo {
+  width: 300px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nintendo {
+  width: 30%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-screen{
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 12% 12% 45% 45%;
+  border: solid 5px black;
+  background-color: black;
+}
+
+
 .screen-layout {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 200px;
-  border: solid 5px black;
-  background-color: black;
+  height: 300px;
+  border: solid 5px grey;
+  background-color: grey;
   border-radius: 5%;
   margin: 10px;
+}
+
+
+.brand-name {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 70%; /* adjust as needed */
+  height: auto; /* maintain aspect ratio */
 }
 
 .right-buttons {
@@ -72,7 +123,9 @@
 }
 
 .B {
-  background-color: red;
+  font: 25px 'Tac One';
+  color: #AFA9C4;
+  background-color: #C9C3DB;
   border-radius: 50%;
   border: solid 2px black;
   width: 50px;
@@ -80,7 +133,9 @@
 }
 
 .A {
-  background-color: blue;
+  font: 25px 'Tac One';
+  color: #AFA9C4;
+  background-color: #C9C3DB;
   border-radius: 50%;
   border: solid 2px black;
   width: 50px;
@@ -88,44 +143,91 @@
   margin-top: 70%;
 }
 
+.A:hover,
+.B:hover {
+  background-color: #AFA9C4;
+  color: #C9C3DB;
+}
+
 .cross {
   display: flex;
   flex-direction: row;
+  width: 60px;
+  height: 60px;
 }
 
 .cross-middle {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
+.cross-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cross-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 
 .up {
   background-color: black;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border: black solid 2px;
+  border-bottom: black solid 2px;
+  border-left:  grey solid 2px;
+  border-right: grey solid 2px;
+  border-top:  grey solid 2px;
 }
 
 .left {
   background-color: black;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border: black solid 2px;
+  border-bottom: grey solid 2px;
+  border-left:  grey solid 2px;
+  border-right: black solid 2px;
+  border-top:  grey solid 2px;
 }
 
 .right {
   background-color: black;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border: black solid 2px;
+  border-bottom: grey solid 2px;
+  border-left:  black solid 2px;
+  border-right: grey solid 2px;
+  border-top:  grey solid 2px;
 }
 
 .down {
   background-color: black;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border-bottom: grey solid 2px;
+  border-left:  grey solid 2px;
+  border-right: grey solid 2px;
+  border-top:  black solid 2px;
 }
 
+.middle {
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border: black solid 2px;
+}
 
+.up:hover,
+.left:hover,
+.right:hover,
+.down:hover
+{
+  background-color: #18161F;
+  color: #C9C3DB;
+}
 
