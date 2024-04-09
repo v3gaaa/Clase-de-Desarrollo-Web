@@ -89,15 +89,14 @@
 }
 
 .cross {
-  display: grid;
-  width: 60px;
-  height: 60px;
+  display: flex;
+  flex-direction: row;
 }
 
-.empty {
-  background-color: white;
-  width: 20px;
-  height: 20px;
+.cross-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .up {

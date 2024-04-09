@@ -11,17 +11,22 @@ function App() {
           <div className="left-buttons">
 
             <div className='cross'>
-              <div className='empty'></div>
-              <button className='up'>UP</button>
-              <div className='empty'></div>
-              <button className='left'>LEFT</button>
-              <div className='empty'></div>
-              <button className='right'>RIGHT</button>
-              <div className='empty'></div>
-              <button className='down'>DOWN</button>
-              <div className='empty'></div>
+              <div className='cross-left'>
+                <button className='left'>LEFT</button>
+              </div>
+              <div className='cross-middle'>
+                <button className='up'>UP</button>
+                <button className='down'>DOWN</button>
+              </div>
+              <div className='cross-right'>
+                <button className='right'>RIGHT</button>
+              </div>
+              
+              
+              
+              
             </div>
-            
+
           </div>
 
           <div className="container-screen">
