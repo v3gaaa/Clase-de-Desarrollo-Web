@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import { set } from 'firebase/database'
 
 function App() {
+  const [myPokeSelection, setMyPokeSelection] = useState([])
   const [pokemones, setPokemones] = useState([])
   const [position, setPosition] = useState(0)
   const [powerOn, setPowerOn] = useState(false) // Estado para controlar si está encendido o no
@@ -39,7 +40,7 @@ function App() {
   // Función para manejar el evento de posición
   const handlePosition = (forward) => {
     if(!forward && position <= 0) return;
-    if(forward && position >= 20) return;
+    if(forward && position >= 19) return;
     if(!forward){
       setPosition(position - 1)
     } else {
@@ -49,7 +50,15 @@ function App() {
 
   const filterSelection = () => {
     const mySelection = pokemones.filter((value, idx) => position === idx);
-    console.log(mySelection)
+    setMyPokeSelection(mySelection)
+    
+    computerSelection()
+  }
+
+  const computerSelection = () => {
+    const randomPosition = Math.floor(Math.random() * 20)
+    const computerSelection = pokemones.filter((value, idx) => randomPosition === idx);
+    setMyPokeSelection(computerSelection)
   }
 
   return (
