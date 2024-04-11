@@ -1,7 +1,9 @@
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Tac+One&display=swap');
+
+@font-face {
+  font-family: Pokemon Hollow;
+  src: url(assets/PokemonHollow.ttf);
+}
 
 .main-container {
   position: absolute;
@@ -13,27 +15,40 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: wheat;
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 15px Pokemon Hollow;
+  color: #503B84;
+  margin-bottom: 10px;
+  background-color: #C9C3DB;
+  border-radius: 30%;
+  box-shadow: inset 0px 0px 10px 0px #AFA9C4;
 }
 
 .layout {
-  width: 800px;
+  width: 650px;
   height: 350px;
   border-radius: 12% 12% 35% 35%;
   display: flex;
   justify-content: center;
   background-color: #C9C3DB;
-  border: solid 2px black;
+  border: solid 2px #AFA9C4;
 }
 
 .layout-game {
-  width: 800px;
+  width: 650px;
   height: 350px;
-  border: solid 5px black;
+  border: solid 5px #48347C;
   border-radius: 20% 20% 35% 35%;
   display: flex;
   justify-content: center;
   background-color: #503B84;
+  box-shadow: #18161F 10px 7px 10px 0px;
 }
 
 
@@ -75,8 +90,8 @@
 
 .screen-layout {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 300px;
   height: 300px;
   border: solid 5px grey;
@@ -95,24 +110,107 @@
 }
 
 .logo {
-  width: 70%; /* adjust as needed */
-  height: auto; /* maintain aspect ratio */
+  width: 70%;
+  height: auto;
+}
+
+.right-part {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .right-buttons {
-  width: 200px;
-  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.left-buttons {
+.left-part {
   width: 200px;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.divider {
+  width: 10%;
+  height: 100px;
+  background-color: #503B84;
+}
+
+.start-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 100px;
+  font: 20px 'Tac One';
+  gap: 15px;
+}
+
+.start {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  width: 60px;
+  height: 17px;
+  color: #48347C;
+  background-color: #503B84;
+  border: solid 2px #48347C;
+  border-radius: 30%;
+  font: 20px 'Tac One';
+  padding-right: 5px;
+  rotate: 30deg;
+  gap: 3.5px;
+}
+
+.start-button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #C9C3DB;
+  border: solid 2px #AFA9C4;
+  right: 10px;
+}
+
+.select {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  width: 60px;
+  height: 17px;
+  color: #48347C;
+  background-color: #503B84;
+  border: solid 2px #48347C;
+  border-radius: 30%;
+  font: 20px 'Tac One';
+  padding-right: 5px;
+  rotate: 30deg;
+  gap: 3.5px;
+}
+
+.select-button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #C9C3DB;
+  border: solid 2px #AFA9C4;
+  right: 10px;
+}
+
+.select-button:hover,
+.start-button:hover {
+  background-color: #AFA9C4;
+  color: #C9C3DB;
 }
 
 .letter-button {
@@ -127,7 +225,7 @@
   color: #AFA9C4;
   background-color: #C9C3DB;
   border-radius: 50%;
-  border: solid 2px black;
+  border: solid 2px #AFA9C4;
   width: 50px;
   height: 50px;
 }
@@ -137,7 +235,7 @@
   color: #AFA9C4;
   background-color: #C9C3DB;
   border-radius: 50%;
-  border: solid 2px black;
+  border: solid 2px #AFA9C4;
   width: 50px;
   height: 50px;
   margin-top: 70%;
@@ -152,8 +250,8 @@
 .cross {
   display: flex;
   flex-direction: row;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
 }
 
 .cross-middle {
@@ -173,53 +271,57 @@
 
 
 .up {
-  background-color: black;
-  width: 20px;
-  height: 20px;
+  background-color: #C9C3DB;
+  width: 25px;
+  height: 25px;
   border: black solid 2px;
-  border-bottom: black solid 2px;
-  border-left:  grey solid 2px;
-  border-right: grey solid 2px;
-  border-top:  grey solid 2px;
+  border-bottom: #C9C3DB solid 2px;
+  border-left:  #AFA9C4 solid 2px;
+  border-right: #AFA9C4 solid 2px;
+  border-top:  #AFA9C4 solid 2px;
+  border-radius: 30% 30% 0% 0%;
 }
 
 .left {
-  background-color: black;
-  width: 20px;
-  height: 20px;
+  background-color: #C9C3DB;
+  width: 25px;
+  height: 25px;
   border: black solid 2px;
-  border-bottom: grey solid 2px;
-  border-left:  grey solid 2px;
-  border-right: black solid 2px;
-  border-top:  grey solid 2px;
+  border-bottom: #AFA9C4 solid 2px;
+  border-left:  #AFA9C4 solid 2px;
+  border-right: #C9C3DB solid 2px;
+  border-top:  #AFA9C4 solid 2px;
+  border-radius: 30% 0% 0% 30%;
 }
 
 .right {
-  background-color: black;
-  width: 20px;
-  height: 20px;
+  background-color: #C9C3DB;
+  width: 25px;
+  height: 25px;
   border: black solid 2px;
-  border-bottom: grey solid 2px;
-  border-left:  black solid 2px;
-  border-right: grey solid 2px;
-  border-top:  grey solid 2px;
+  border-bottom: #AFA9C4 solid 2px;
+  border-left:  #C9C3DB solid 2px;
+  border-right: #AFA9C4 solid 2px;
+  border-top:  #AFA9C4 solid 2px;
+  border-radius: 0% 30% 30% 0%;
 }
 
 .down {
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border-bottom: grey solid 2px;
-  border-left:  grey solid 2px;
-  border-right: grey solid 2px;
-  border-top:  black solid 2px;
+  background-color: #C9C3DB;
+  width: 25px;
+  height: 25px;
+  border-bottom: #AFA9C4 solid 2px;
+  border-left:  #AFA9C4 solid 2px;
+  border-right: #AFA9C4 solid 2px;
+  border-top:  #C9C3DB solid 2px;
+  border-radius: 0% 0% 30% 30%;
 }
 
 .middle {
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border: black solid 2px;
+  background-color: #C9C3DB;
+  width: 25px;
+  height: 25px;
+  border: #C9C3DB solid 2px;
 }
 
 .up:hover,
@@ -227,7 +329,30 @@
 .right:hover,
 .down:hover
 {
-  background-color: #18161F;
+  background-color: #AFA9C4;
   color: #C9C3DB;
 }
 
+
+.power {
+  height: 100px;
+  width: 90px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.power-button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: green;
+  border: solid 2px black;
+}
+
+
+
+.power-button:hover {
+  background-color: gray;
+}

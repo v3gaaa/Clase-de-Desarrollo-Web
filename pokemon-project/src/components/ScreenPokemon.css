@@ -1,0 +1,22 @@
+.ScreenPokemon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 309px;
+    height: 180px;
+    border-radius: 5%;
+    overflow: auto;
+    background-image: url("../assets/background2.png");
+    background-size: cover;
+}
+
+
+.pokemon-card {
+    height: 120px;
+    width: 82px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 7px;
+}
