@@ -9,6 +9,7 @@ const BattleScreen = ({myPokeSelection, computerPokeSelection, enemyHealth, play
 
         <div className="enemy">
             <div className="enemy-health">
+                <h1>{computerPokeSelection[0].name}</h1>
                 <h1>Enemy Health: {enemyHealth}</h1>
             </div>
            <div className="enemy-image">
@@ -22,6 +23,7 @@ const BattleScreen = ({myPokeSelection, computerPokeSelection, enemyHealth, play
                 <img src={myPokeSelection[0].sprites.back_default} />
             </div>
             <div className="player-health">
+                <h1>{myPokeSelection[0].name}</h1>
                 <h1>Player Health: {playerHealth}</h1>
             </div>
             

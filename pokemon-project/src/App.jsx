@@ -42,7 +42,9 @@ function App() {
   }
 
   const handleAttack = async (player) => {
+
     const damage = Math.floor(Math.random() * 10)
+    
     if(player){
       const newEnemyHealth = enemyHealth - damage
       setEnemyHealth(newEnemyHealth)
