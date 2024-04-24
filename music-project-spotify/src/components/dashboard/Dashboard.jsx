@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { fetchSpotifyApi } from '../../api/spotifyAPIDemo'
+import { map } from 'next.js'
 
 
 const Dashboard = () => {
@@ -10,7 +11,7 @@ const Dashboard = () => {
   }
 
   const handleChange = (e) => {
-    
+    setSongs([])
     const newValues = {
       ...form,
       [e.target.name]: e.target.value
@@ -31,7 +32,7 @@ const Dashboard = () => {
     params.append('q', encodeURIComponent(`remaster track:${form.search} artist:${form.artist}`));
     params.append('type', option);
     const queryString = params.toString();
-    url = `https://api.spotify.com/v1/search`
+    const url = `https://api.spotify.com/v1/search`
     const updatedUrl = `${url}?${queryString}`
 
 
@@ -46,12 +47,34 @@ const Dashboard = () => {
       token
     );
     console.log(response)
+    setSongs(response[`${option}s`].items.map((song) => ({
+      name: song.name,
+      artist: song.artists[0].name,
+      album: song.album.name,
+      image: song.album.images[0].url
+    })))
   }
 
   const [form, setForm] = useState({
     search: '',
     artist: '',
   })
+
+  const getDeviceId = async () => {
+    const url = 'https://api.spotify.com/v1/me/player/devices'
+    const token = `Bearer ${localStorage.getItem('token')}`
+    const response = await fetchSpotifyApi(
+      url,
+      'GET',
+      null,
+      'application/json',
+      token
+    )
+    console.log(response)
+    return response.devices[0].id
+  }
+
+  const [songs, setSongs] = useState([]);
 
   const [option, setOption] = useState('');
 
@@ -60,34 +83,64 @@ const Dashboard = () => {
   ]
 
   return (
+    <div className='flex justify-center flex-row h-full w-full mt-4'>
 
-    <div>
-      <input 
-      type="text" 
-      placeholder="Search" 
-      value={form.search}
-      onChange={handleChange}
-      />
+      <div className='flex justify-center flex-col w-1/5' id='left'>
 
-      <select name='types' onChange={handleSelectChange}>
-        {types.map((type) => (
-          <option key={type} value={type}>
-            {type}
-          </option>
-        ))}
-      </select>
+      </div>
+      
+      <div className='flex justify-center flex-col w-3/5' id='middle'>
+        <div className='flex justify-around flex-row h-10 pr-3'>
+          <input 
+          type="text" 
+          placeholder="Search"
+          name='search'
+          value={form.search}
+          onChange={handleChange}
+          className=' border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent'
+          />
 
-      <input 
-      type="text" 
-      placeholder="Artist" 
-      value={form.artist}
-      onChange={handleChange}
-      />
+          <select name='types' onChange={handleSelectChange} className='border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent '>
+            {types.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
 
-      <button
-      onClick={handleSearch}
-      >
-      Search</button>
+          <input 
+          type="text" 
+          placeholder="Artist"
+          name='artist'
+          value={form.artist}
+          onChange={handleChange}
+          className='  border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent'
+          />
+
+          <button
+          onClick={handleSearch}
+          className=' hover:bg-green-500 h-full bg-green-400 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline'
+          >
+          Search</button>
+        </div>
+
+        <div className='flex  items-start flex-col w-200 justify-start overflow-auto mt-3 h-96' id='songs'>
+          {songs.map((song) => (
+            <div key={song.name} className='flex flex-row justify-start items-center pb-2 w-full text-white hover: opacity-70 hover:bg-gray-100 hover:text-black rounded'>
+              <img src={song.image} alt={song.name} className='h-12 w-12 rounded' />
+              <div className='flex flex-col justify-start items-start w-200 h-12 text-xs ml-2'>
+                <div className='overflow-hidden'>{song.name}</div>
+                <div className=''>{song.artist}</div>
+                <div className=''>{song.album}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className='flex justify-center flex-col h-full w-1/5' id='right'>
+
+      </div>
 
     </div>
   )
