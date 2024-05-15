@@ -126,12 +126,20 @@ const Dashboard = () => {
 
         <div className='flex  items-start flex-col w-200 justify-start overflow-auto mt-3 h-96' id='songs'>
           {songs.map((song) => (
-            <div key={song.name} className='flex flex-row justify-start items-center pb-2 w-full text-white hover: opacity-70 hover:bg-gray-100 hover:text-black rounded'>
-              <img src={song.image} alt={song.name} className='h-12 w-12 rounded' />
-              <div className='flex flex-col justify-start items-start w-200 h-12 text-xs ml-2'>
-                <div className='overflow-hidden'>{song.name}</div>
-                <div className=''>{song.artist}</div>
-                <div className=''>{song.album}</div>
+
+            <div className='flex flex-row justify-between w-full'>
+
+              <div key={song.name} className='flex flex-row justify-start items-center pb-2 w-full text-white hover: opacity-70 hover:bg-gray-100 hover:text-black rounded'>
+                <img src={song.image} alt={song.name} className='h-12 w-12 rounded' />
+                <div className='flex flex-col justify-start items-start w-200 h-12 text-xs ml-2'>
+                  <div className='overflow-hidden'>{song.name}</div>
+                  <div className=''>{song.artist}</div>
+                  <div className=''>{song.album}</div>
+                </div>
+              </div>
+
+              <div className='my-5'>
+                <button className='hover:bg-green-500 h-full bg-green-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-6'>Play</button>
               </div>
             </div>
           ))}
